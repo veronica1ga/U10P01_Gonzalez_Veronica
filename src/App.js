@@ -1,23 +1,13 @@
+// eslint-disable-next-line no-unused-vars
 import React, { Component } from 'react';
 import CivilizationList from './CivilizationList';
 import logo from './ageofempires.jpg';
 import './App.css';
 
 class App extends React.Component {
-  /*constructor() {
-    super();
-    this.state = {
-      users: [
-        {id: 1, name: "Verónica", email: "veroglezalmeida@gmail.com"},
-        {id: 2, name: "test", email: "test@test.es"}
-      ]
-    };
-  }*/
   constructor(props) {
     super(props);
     this.state = {
-      error: null,
-      isLoaded: false,
       civilizations: []
     };
   }
@@ -31,12 +21,6 @@ class App extends React.Component {
             isLoaded: true,
             civilizations: result.civilizations
           });
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
         }
       )
   }
@@ -49,13 +33,18 @@ class App extends React.Component {
       civilization_bonus:event.target.civilization_bonus.value,
       expansion: event.target.expansion.value
     };
+
+    let list = {
+      name: event.target.name.value
+    };
     this.setState({
-      civilizations: this.state.civilizations.concat([user])
+      civilizations: this.state.civilizations.concat([user]),
+      civilizationsNom: this.state.civilizationsNom.concat([list])
     });
   }
 
   render() {
-    console.log(this.state.civilizations);
+    console.log(this.state.civilizations.name);
     return (
       <div className="App">
         <div className="App-header">

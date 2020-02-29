@@ -5,18 +5,22 @@ class CivilizationList extends Component {
   render () {
     return (
         <div>
-          {this.props.civilizations.map(u => {
+          {this.props.civilizations.map(c => {
             return (
+             
               <User
-                key={u.id}
-                name={u.name}
-                army_type={u.army_type}
-                civilization_bonus={u.civilization_bonus}
-                expansion={u.expansion}
+                key={c.id}
+                name={c.name}
+                army_type={c.army_type}
+                civilization_bonus={c.civilization_bonus}
+                expansion={c.expansion}
               />
             );
           })}
+
         </div>
+
+
     );
   }
 }

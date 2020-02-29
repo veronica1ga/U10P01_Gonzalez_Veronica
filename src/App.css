@@ -36,20 +36,27 @@
     }
 }
 
-dt:first-child {
+h1 {
     color: red;
     font-weight: bold;
 }
 
-dt {
+h5 {
     color: blue;
 }
 
-dl {
+ul {
     border: solid 0.1em black;
     margin-bottom: 5em;
 }
 
-dt {
-    border: none;
+li{
+    list-style-type: none;
+}
+
+.civilizacion{
+    background-color:greenyellow;
+    width: 50em;
+    position: relative;
+    left:17em;
 }
